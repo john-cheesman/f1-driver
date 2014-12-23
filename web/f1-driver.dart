@@ -1,16 +1,15 @@
-import 'dart:html';
+import 'classes/classes.dart';
 
 void main() {
-  querySelector('#sample_text_id')
-    ..text = 'Click me!'
-    ..onClick.listen(reverseText);
+    Driver.getDrivers()
+        .then((_) {
+            updateDriver();
+        })
+        .catchError((error) {
+            print("Couldn't find drivers: $error");
+        });
 }
 
-void reverseText(MouseEvent event) {
-  var text = querySelector('#sample_text_id').text;
-  var buffer = new StringBuffer();
-  for (int i = text.length - 1; i >= 0; i--) {
-    buffer.write(text[i]);
-  }
-  querySelector('#sample_text_id').text = buffer.toString();
+void updateDriver() {
+    new Driver();
 }
