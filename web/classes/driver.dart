@@ -13,17 +13,17 @@ class Driver {
     String _dateOfBirth;
     String _nationality;
 
-    String get url => _url;
-    String get fullName => '$_givenName $_familyName';
+    String get url         => _url;
+    String get fullName    => '$_givenName $_familyName';
     String get dateOfBirth => _dateOfBirth;
     String get nationality => _nationality;
 
     Driver() {
         var index = indexGen.nextInt(drivers.length);
 
-        _url = drivers[index]['url'];
-        _givenName = drivers[index]['givenName'];
-        _familyName = drivers[index]['familyName'];
+        _url         = drivers[index]['url'];
+        _givenName   = drivers[index]['givenName'];
+        _familyName  = drivers[index]['familyName'];
         _dateOfBirth = drivers[index]['dateOfBirth'];
         _nationality = drivers[index]['nationality'];
     }

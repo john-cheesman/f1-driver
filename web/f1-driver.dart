@@ -2,11 +2,13 @@ import 'dart:html';
 import 'classes/classes.dart';
 
 ButtonElement randomDriverButton;
+LinkElement biographyLink;
 DataListElement nationalityDescription;
 DataListElement dateOfBirthDescription;
 
 void main() {
-    randomDriverButton = querySelector('.js-random-driver');
+    randomDriverButton     = querySelector('.js-random-driver');
+    biographyLink          = querySelector('.js-biography');
     nationalityDescription = querySelector('.js-nationality');
     dateOfBirthDescription = querySelector('.js-date-of-birth');
 
@@ -24,7 +26,12 @@ void main() {
 void updateDriver() {
     var driver = new Driver();
 
-    print(driver.fullName);
+    biographyLink
+        ..text = driver.fullName
+        ..href = driver.url;
+
+    nationalityDescription.text = driver.nationality;
+    dateOfBirthDescription.text = driver.dateOfBirth;
 }
 
 void randomDriver(Event e) {
