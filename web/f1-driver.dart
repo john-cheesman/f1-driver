@@ -11,5 +11,7 @@ void main() {
 }
 
 void updateDriver() {
-    new Driver();
+    var driver = new Driver();
+
+    print(driver.fullName);
 }
