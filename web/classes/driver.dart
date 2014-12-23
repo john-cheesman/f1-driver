@@ -10,22 +10,22 @@ class Driver {
     String _url;
     String _givenName;
     String _familyName;
-    String _dateOfBirth;
     String _nationality;
+    DateTime _dateOfBirth;
 
     String get url         => _url;
     String get fullName    => '$_givenName $_familyName';
-    String get dateOfBirth => _dateOfBirth;
     String get nationality => _nationality;
+    String get dateOfBirth => '${_dateOfBirth.day}/${_dateOfBirth.month}/${_dateOfBirth.year}';
 
     Driver() {
-        var index = indexGen.nextInt(drivers.length);
+        var i = indexGen.nextInt(drivers.length);
 
-        _url         = drivers[index]['url'];
-        _givenName   = drivers[index]['givenName'];
-        _familyName  = drivers[index]['familyName'];
-        _dateOfBirth = drivers[index]['dateOfBirth'];
-        _nationality = drivers[index]['nationality'];
+        _url         = drivers[i]['url'];
+        _givenName   = drivers[i]['givenName'];
+        _familyName  = drivers[i]['familyName'];
+        _nationality = drivers[i]['nationality'];
+        _dateOfBirth = DateTime.parse(drivers[i]['dateOfBirth']);
     }
 
     static Future getDrivers() {
