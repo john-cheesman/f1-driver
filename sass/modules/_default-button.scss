@@ -1,0 +1,20 @@
+//
+// Default Button Pattern
+// _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// Base styles for default buttons
+// _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+%default-button {
+    @extend %button;
+
+    @include rem(font-size, $default-button-font-size);
+    @include line-height($default-button-line-height-multiple, $default-button-font-size);
+
+    padding: $default-button-padding;
+    color: palette(blue);
+    border: $border-width-small solid;
+
+    &:hover, &:focus {
+        color: palette(blue, dark);
+    }
+}

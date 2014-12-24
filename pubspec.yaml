@@ -3,8 +3,4 @@ version: 0.0.1
 description: A sample web application
 dependencies:
     browser: any
-    sass: any
-transformers:
-    - sass:
-        style: compressed
 #  unittest: any
