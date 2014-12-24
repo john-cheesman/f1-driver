@@ -3,25 +3,12 @@
 // _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 .driver {
+    @include rem(padding, $driver-padding);
+    @include rem(margin, $driver-margin);
+
+    background-color: palette(grey, light);
+
     h1 {
         @include heading(beta);
-    }
-}
-
-.driver-information {
-    @include clearfix;
-
-    dt {
-        float: left;
-        clear: left;
-        font-weight: $weight-bold;
-    }
-
-    dd {
-        float: right;
-    }
-
-    dd {
-        margin: 0;
     }
 }

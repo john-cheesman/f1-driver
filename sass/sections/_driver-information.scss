@@ -1,0 +1,24 @@
+//
+// Driver Information
+// _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+.driver-information {
+    @include clearfix;
+
+    margin: 0;
+
+    dt {
+        float: left;
+        clear: left;
+        font-weight: $weight-bold;
+    }
+
+    dd {
+        float: right;
+    }
+
+    dd {
+        margin: 0;
+    }
+}
+

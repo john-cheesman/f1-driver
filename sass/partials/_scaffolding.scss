@@ -50,7 +50,7 @@ h3 {
     @include heading(gamma);
 }
 
-figure, p, ul, ol, dl {
+figure, p, ul, ol {
     @include rem(margin, 0 0 ($spacing-unit));
 }
 

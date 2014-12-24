@@ -9,12 +9,13 @@
 
     @include rem(font-size, $default-button-font-size);
     @include line-height($default-button-line-height-multiple, $default-button-font-size);
+    @include rem(padding, $default-button-padding);
 
-    padding: $default-button-padding;
     color: palette(blue);
     border: $border-width-small solid;
 
     &:hover, &:focus {
         color: palette(blue, dark);
+        background-color: palette(grey, light);
     }
 }

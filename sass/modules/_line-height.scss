@@ -7,5 +7,5 @@
 //     $font-size:            the font size of the element in pixels
 // _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 @mixin line-height($line-height-multiple, $font-size) {
-    line-height: strip-unit(($spacing-unit * $line-height-multiple)) / $font-size;
+    line-height: strip-unit(($spacing-unit * $line-height-multiple)) / strip-unit($font-size);
 }

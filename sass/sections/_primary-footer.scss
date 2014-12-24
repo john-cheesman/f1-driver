@@ -1,0 +1,7 @@
+//
+// Primary Footer
+// _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+.primary-footer {
+    @include rem(font-size, $primary-footer-font-size);
+}

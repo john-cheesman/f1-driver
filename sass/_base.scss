@@ -30,11 +30,15 @@ $baseline-px:                         16px !default;
 $spacing-unit:                        24px !default;
 $container-width:                     25em !default;
 $container-padding:                   0 $spacing-unit !default;
-$default-button-padding:              ($spacing-unit / 2) !default;
+$default-button-padding:              0 ($spacing-unit / 2) !default;
+$content-margin:                      0 0 $spacing-unit 0 !default;
+$driver-padding:                      ($spacing-unit / 2) !default;
+$driver-margin:                       0 0 $spacing-unit 0 !default;
 
 // Typography
 $default-button-font-size:            18px !default;
 $default-button-line-height-multiple: 2 !default;
+$primary-footer-font-size:            14px !default;
 
 // Headings
 // Major third @16px
