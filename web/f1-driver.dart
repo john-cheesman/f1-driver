@@ -5,12 +5,15 @@ ButtonElement randomDriverButton;
 LinkElement biographyLink;
 DataListElement nationalityDescription;
 DataListElement dateOfBirthDescription;
+DataListElement racesTotalDescription;
+
 
 void main() {
     randomDriverButton     = querySelector('.js-random-driver');
     biographyLink          = querySelector('.js-biography');
     nationalityDescription = querySelector('.js-nationality');
     dateOfBirthDescription = querySelector('.js-date-of-birth');
+    racesTotalDescription  = querySelector('.js-races-total');
 
     randomDriverButton.onClick.listen(randomDriver);
 
@@ -25,6 +28,14 @@ void main() {
 
 void updateDriver() {
     var driver = new Driver();
+
+    driver.getRaces(driver.driverId)
+        .then((_) {
+            racesTotalDescription.text = driver.racesTotal;
+        })
+        .catchError((error) {
+            print("Couldn't get races total");
+        });
 
     biographyLink
         ..text = driver.fullName
