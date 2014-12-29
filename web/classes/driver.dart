@@ -18,12 +18,13 @@ class Driver {
     String _racesTotal;
     List _races = [];
 
-    String get driverId    => _driverId;
-    String get url         => _url;
-    String get fullName    => '$_givenName $_familyName';
-    String get nationality => _nationality;
-    String get dateOfBirth => '${_dateOfBirth.day}/${_dateOfBirth.month}/${_dateOfBirth.year}';
-    String get racesTotal  => _racesTotal;
+    String get driverId       => _driverId;
+    String get url            => _url;
+    String get fullName       => '$_givenName $_familyName';
+    String get nationality    => _nationality;
+    String get dateOfBirth    => '${_dateOfBirth.day}/${_dateOfBirth.month}/${_dateOfBirth.year}';
+    String get racesTotal     => _racesTotal;
+    String get racesCompleted => _races.where((i) => i['Results'][0]['positionText'].contains(new RegExp(r'[^WFNDER]'))).toList().length.toString();
 
     Driver() {
         var i = indexGen.nextInt(drivers.length);

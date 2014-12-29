@@ -6,14 +6,16 @@ LinkElement biographyLink;
 DataListElement nationalityDescription;
 DataListElement dateOfBirthDescription;
 DataListElement racesTotalDescription;
+DataListElement racesCompletedDescription;
 
 
 void main() {
-    randomDriverButton     = querySelector('.js-random-driver');
-    biographyLink          = querySelector('.js-biography');
-    nationalityDescription = querySelector('.js-nationality');
-    dateOfBirthDescription = querySelector('.js-date-of-birth');
-    racesTotalDescription  = querySelector('.js-races-total');
+    randomDriverButton        = querySelector('.js-random-driver');
+    biographyLink             = querySelector('.js-biography');
+    nationalityDescription    = querySelector('.js-nationality');
+    dateOfBirthDescription    = querySelector('.js-date-of-birth');
+    racesTotalDescription     = querySelector('.js-races-total');
+    racesCompletedDescription = querySelector('.js-races-completed');
 
     randomDriverButton.onClick.listen(randomDriver);
 
@@ -32,9 +34,10 @@ void updateDriver() {
     driver.getRaces(driver.driverId)
         .then((_) {
             racesTotalDescription.text = driver.racesTotal;
+            racesCompletedDescription.text = driver.racesCompleted;
         })
         .catchError((error) {
-            print("Couldn't get races total");
+            print("Couldn't get races total: $error");
         });
 
     biographyLink
