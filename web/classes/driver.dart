@@ -25,6 +25,7 @@ class Driver {
     String get dateOfBirth    => '${_dateOfBirth.day}/${_dateOfBirth.month}/${_dateOfBirth.year}';
     String get racesTotal     => _racesTotal;
     String get racesCompleted => _races.where((i) => i['Results'][0]['positionText'].contains(new RegExp(r'[^WFNDER]'))).toList().length.toString();
+    String get racesWon       => _races.where((i) => i['Results'][0]['position'] == '1').toList().length.toString();
 
     Driver() {
         var i = indexGen.nextInt(drivers.length);
